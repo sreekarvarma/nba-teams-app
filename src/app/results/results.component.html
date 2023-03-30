@@ -1,0 +1,32 @@
+<mat-card style="width: 60%">
+    <mat-card-header *ngIf="!loadingTeamData; else loadingTeam">
+    <mat-card-title class="game-card-title">
+        <span>{{teamData.full_name}} [{{teamData.abbreviation}}]</span>
+    </mat-card-title>
+    <mat-card-subtitle>
+        {{teamData.conference}} conference
+    </mat-card-subtitle>
+ </mat-card-header>
+ <ng-template #loadingTeam>
+    <mat-card-header>
+        <mat-card-title class="game-card-title">
+            <span>Loading team data...</span>
+        </mat-card-title>
+    </mat-card-header>
+</ng-template>
+<mat-divider style="margin: 1rem 0"></mat-divider>
+<mat-card-content class="game-data" *ngIf="!loadingGames; else loadGamesPending">
+    <p>Scores of past 12 days</p>
+    <p *ngFor="let game of games"><b>{{game.home_team.abbreviation}}</b>{{" "}}{{game.home_team_score}}{{" - "}}{{game.visitor_team_score}}{{" "}}<b>{{game.visitor_team.abbreviation}}</b></p>
+</mat-card-content>
+<ng-template #loadGamesPending>
+    <mat-card-content class="game-data">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-content>
+</ng-template>
+<mat-card-actions>
+    <button mat-raised-button color="primary" (click)="goBack()" id="backBtn">
+        << Back to all teams stats
+    </button>
+</mat-card-actions>
+</mat-card>

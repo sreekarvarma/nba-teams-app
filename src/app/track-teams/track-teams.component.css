@@ -1,0 +1,19 @@
+.track-team{
+    display: flex;
+    flex-direction: column;
+}
+
+.select-team{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+}
+
+.tracked-team-cards{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+}

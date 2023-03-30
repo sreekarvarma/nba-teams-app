@@ -1,0 +1,23 @@
+<div class="track-team">
+    <div class="select-team">
+    <mat-form-field id="teamSelect" appearance="fill">
+        <mat-label>{{fetchingTeams? "loading ...": "Select Team" }}
+        </mat-label>
+        <mat-select placeholder="Select a team" 
+        [formControl]="selectedTeam">
+            <mat-option *ngFor="let team of teams" [value]="team.id">
+                {{team.full_name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button id="trackBtn" mat-raised-button (click)="onTeamSelected()" [disabled]="!teamSelected || fetchingTeams || fetchingTeamGames">Track team</button>
+    </div>
+    <mat-progress-bar *ngIf="fetchingTeamGames" mode="indeterminate"></mat-progress-bar>
+    <div class="tracked-team-cards">
+        <app-team-card *ngFor="let team of trackedTeams"
+         [trackedTeam]="team"
+         (onRemoveTeam)="removeTeamFromTracked($event)"
+         ></app-team-card>
+    </div>
+
+</div>

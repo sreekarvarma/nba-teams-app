@@ -1,0 +1,61 @@
+.game-card{
+    width: 350px;
+}
+
+.game-card-title{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.won{
+    background-color: #b2ff59;
+}
+
+.lost{
+    background-color: #ff1744;
+}
+
+.tied{
+    background-color: #ffeb3b;
+}
+
+.win-loss{
+    display: flex;
+    justify-content: flex-start;
+    gap: .5rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.game-result{
+    font-size: .7rem;
+    font-weight: 500;
+    padding: .2rem;
+    width: 1rem;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.game-data{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.game-card-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
